@@ -20,8 +20,10 @@ You can start with tiny shakespeare or any text you have permission to use.
 3) **Train tokenizer (SentencePiece, 32k vocab)**
 ```bash
 python3 scripts/train_tokenizer.py   --input data/raw/corpus.txt   --model_prefix artifacts/tokenizer/llm_spm   --vocab_size 32000
+```
 or
-11027
+```bash
+python3 scripts/train_tokenizer.py   --input data/raw/corpus.txt   --model_prefix artifacts/tokenizer/llm_spm   --vocab_size 11027
 ```
 
 4) **Shard & pack data to fixed-length token sequences (2k)**
