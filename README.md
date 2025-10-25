@@ -102,4 +102,6 @@ q, k, v = qkv[..., 0, :], qkv[..., 1, :], qkv[..., 2, :]
 
 **Why:** After `.view()`, dimensions are `[0:B, 1:T, 2:H, 3:3, 4:D]`. Using `.permute(0, 2, 1, 3, 4)` reorders to `[B, H, T, 3, D]`. Then `qkv[..., 0, :]` extracts Q (shape `B, H, T, D`), `[..., 1, :]` extracts K, and `[..., 2, :]` extracts V. Any other permute order will fail.
 
+---
+
 **Note:** This is an educational baseline, not an industrial training system. See the comments in code for where to plug in FSDP/DeepSpeed, Flash-Attn, and better data pipelines.
